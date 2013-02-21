@@ -24,9 +24,7 @@ module Urlshrt
       hash = Digest::SHA256.hexdigest("#{url}#{SALT}")
 
       url = get_shorturl_by_hash(hash)
-      if !url.nil?
-        return url
-      end
+      return url if !url.nil?
 
       shorturl = make_shorturl(url, hash)
       
