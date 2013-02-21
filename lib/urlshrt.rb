@@ -22,7 +22,6 @@ module Urlshrt
 
     def add_url(url)
       hash = Digest::SHA256.hexdigest("#{url}#{SALT}")
-      puts hash
 
       url = get_shorturl_by_hash(hash)
       if !url.nil?
